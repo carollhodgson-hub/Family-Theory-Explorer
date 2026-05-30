@@ -664,7 +664,275 @@
       <details><summary>Quick Writing Formula</summary><p><strong>Concept/theory + definition + family example + explanation.</strong> Example: “Family systems theory views the family as an interconnected system. In my family, one person’s stress affected everyone’s routines, emotions, and responsibilities.”</p></details>
       <details><summary>Quick Self-Check</summary><ul><li>Did I define the theory?</li><li>Did I apply it to a real or fictional family example?</li><li>Did I explain why the theory helps us understand the example?</li><li>Did I cite the textbook when using course concepts?</li></ul></details>
     </section>
+<section id="theory-detective" style="font-family: Arial, Helvetica, sans-serif; max-width:1200px; margin:40px auto; color:#24323f; line-height:1.6;">
 
+  <div style="background:linear-gradient(135deg,#eef6ff,#fff8ee,#f7fff7); border:2px solid #7c8fb5; border-radius:28px; padding:30px; text-align:center; margin-bottom:28px;">
+    <h1 style="margin-top:0; color:#173b57;">🕵️ Theory Detective</h1>
+    <p style="font-size:18px; max-width:850px; margin:auto;">
+      Read each family scenario and choose the theory that best explains what is happening. This helps move theory from memorization to application.
+    </p>
+  </div>
+
+  <style>
+    .detective-card {
+      background:#ffffff;
+      border:1px solid #d7e3f2;
+      border-radius:24px;
+      padding:24px;
+      margin-bottom:24px;
+      box-shadow:0 8px 18px rgba(0,0,0,.08);
+    }
+
+    .detective-card h2 {
+      margin-top:0;
+      color:#173b57;
+    }
+
+    .scenario-box {
+      background:#f8fbff;
+      border-left:8px solid #5a8ec2;
+      border-radius:16px;
+      padding:18px;
+      margin-bottom:18px;
+    }
+
+    .theory-choice {
+      display:inline-block;
+      background:#fffaf4;
+      border:2px solid #b99a52;
+      border-radius:16px;
+      padding:12px 16px;
+      margin:8px;
+      cursor:pointer;
+      font-weight:bold;
+      color:#24323f;
+      transition:transform .2s ease, box-shadow .2s ease;
+    }
+
+    .theory-choice:hover {
+      transform:translateY(-3px);
+      box-shadow:0 6px 14px rgba(0,0,0,.15);
+    }
+
+    .answer-box {
+      display:none;
+      border-radius:16px;
+      padding:18px;
+      margin-top:16px;
+    }
+
+    .correct-answer {
+      background:#eef7f1;
+      border-left:8px solid #5b9b5b;
+    }
+
+    .incorrect-answer {
+      background:#fff7f7;
+      border-left:8px solid #c44747;
+    }
+
+    .detective-tip {
+      background:#f7f2ff;
+      border-left:8px solid #8a6db0;
+      border-radius:16px;
+      padding:18px;
+      margin-top:20px;
+    }
+  </style>
+
+  <div class="detective-card">
+    <h2>Case 1: The Beach Trip or the Apartment?</h2>
+    <div class="scenario-box">
+      <p>
+        Reid enjoys going to the beach with friends. However, he is supposed to be saving money for an apartment in Raleigh. During a period of rising inflation, Caroll helps him think through whether the reward of going to the beach every weekend is worth the cost of not having enough money for rent.
+      </p>
+    </div>
+
+    <button class="theory-choice" onclick="showDetective('case1-social')">🤝 Social Exchange Theory</button>
+    <button class="theory-choice" onclick="showDetective('case1-conflict')">⚖️ Conflict Theory</button>
+    <button class="theory-choice" onclick="showDetective('case1-erikson')">🧠 Erikson</button>
+
+    <div id="case1-social" class="answer-box correct-answer">
+      <h3>✅ Correct: Social Exchange Theory</h3>
+      <p>
+        Social Exchange Theory examines rewards and costs. Reid is weighing the short-term reward of beach trips against the long-term cost of not having enough money for housing.
+      </p>
+    </div>
+
+    <div id="case1-conflict" class="answer-box incorrect-answer">
+      <h3>Not the best answer.</h3>
+      <p>
+        Conflict Theory could discuss inflation and unequal access to resources, but the main focus of this scenario is the decision-making process involving rewards and costs.
+      </p>
+    </div>
+
+    <div id="case1-erikson" class="answer-box incorrect-answer">
+      <h3>Not the best answer.</h3>
+      <p>
+        Erikson could help explain young adulthood and responsibility, but this scenario most directly illustrates costs and rewards.
+      </p>
+    </div>
+  </div>
+
+  <div class="detective-card">
+    <h2>Case 2: A Parent Loses a Job</h2>
+    <div class="scenario-box">
+      <p>
+        A child does not work at the parent’s job, but when the parent loses employment, the family experiences stress. The child notices tension at home, changes in spending, and more worry about bills.
+      </p>
+    </div>
+
+    <button class="theory-choice" onclick="showDetective('case2-eco')">🌳 Ecological Systems Theory</button>
+    <button class="theory-choice" onclick="showDetective('case2-symbolic')">💬 Symbolic Interactionism</button>
+    <button class="theory-choice" onclick="showDetective('case2-functional')">🏛️ Structural Functionalism</button>
+
+    <div id="case2-eco" class="answer-box correct-answer">
+      <h3>✅ Correct: Ecological Systems Theory</h3>
+      <p>
+        This is a strong example of the exosystem. The child is not directly involved in the parent’s workplace, but the workplace still affects the child’s family life.
+      </p>
+    </div>
+
+    <div id="case2-symbolic" class="answer-box incorrect-answer">
+      <h3>Not the best answer.</h3>
+      <p>
+        Symbolic Interactionism could examine the meanings family members attach to work or stress, but the scenario focuses on an indirect system affecting the child.
+      </p>
+    </div>
+
+    <div id="case2-functional" class="answer-box incorrect-answer">
+      <h3>Not the best answer.</h3>
+      <p>
+        Structural Functionalism could examine how work supports family stability, but Bronfenbrenner’s exosystem explains the indirect influence more directly.
+      </p>
+    </div>
+  </div>
+
+  <div class="detective-card">
+    <h2>Case 3: Family Chores and Gender Expectations</h2>
+    <div class="scenario-box">
+      <p>
+        In one family, daughters are expected to cook and clean while sons are expected to mow the lawn and fix things. A parent later questions these patterns and teaches all children to learn both household and repair skills.
+      </p>
+    </div>
+
+    <button class="theory-choice" onclick="showDetective('case3-feminist')">🌸 Feminist Theory</button>
+    <button class="theory-choice" onclick="showDetective('case3-exchange')">🤝 Social Exchange Theory</button>
+    <button class="theory-choice" onclick="showDetective('case3-erikson')">🧠 Erikson</button>
+
+    <div id="case3-feminist" class="answer-box correct-answer">
+      <h3>✅ Correct: Feminist Theory</h3>
+      <p>
+        Feminist Theory examines gender roles, inequality, power, and expectations. This scenario focuses on how household labor is divided by gender and how those expectations can be challenged.
+      </p>
+    </div>
+
+    <div id="case3-exchange" class="answer-box incorrect-answer">
+      <h3>Not the best answer.</h3>
+      <p>
+        Social Exchange Theory could examine who benefits from the chore arrangement, but the main issue is gendered expectations and inequality.
+      </p>
+    </div>
+
+    <div id="case3-erikson" class="answer-box incorrect-answer">
+      <h3>Not the best answer.</h3>
+      <p>
+        Erikson could connect to identity development, but this scenario most directly reflects gender socialization and feminist theory.
+      </p>
+    </div>
+  </div>
+
+  <div class="detective-card">
+    <h2>Case 4: One Change Affects the Whole Family</h2>
+    <div class="scenario-box">
+      <p>
+        When one family member becomes seriously ill, everyone’s routines change. One person takes on caregiving, another works more hours, and children adjust to new responsibilities at home.
+      </p>
+    </div>
+
+    <button class="theory-choice" onclick="showDetective('case4-systems')">🏠 Family Systems Theory</button>
+    <button class="theory-choice" onclick="showDetective('case4-symbolic')">💬 Symbolic Interactionism</button>
+    <button class="theory-choice" onclick="showDetective('case4-conflict')">⚖️ Conflict Theory</button>
+
+    <div id="case4-systems" class="answer-box correct-answer">
+      <h3>✅ Correct: Family Systems Theory</h3>
+      <p>
+        Family Systems Theory views the family as an interconnected system. When one part of the family changes, the entire family system adjusts.
+      </p>
+    </div>
+
+    <div id="case4-symbolic" class="answer-box incorrect-answer">
+      <h3>Not the best answer.</h3>
+      <p>
+        Symbolic Interactionism could examine meanings attached to illness or caregiving, but the strongest theory here is Family Systems because the whole family reorganizes.
+      </p>
+    </div>
+
+    <div id="case4-conflict" class="answer-box incorrect-answer">
+      <h3>Not the best answer.</h3>
+      <p>
+        Conflict Theory might examine unequal caregiving burdens, but the main focus is how one change affects the whole family system.
+      </p>
+    </div>
+  </div>
+
+  <div class="detective-card">
+    <h2>Case 5: What Does “Family” Mean?</h2>
+    <div class="scenario-box">
+      <p>
+        One student says family means biological relatives. Another says family includes close friends, neighbors, and fictive kin who provide emotional support and belonging.
+      </p>
+    </div>
+
+    <button class="theory-choice" onclick="showDetective('case5-symbolic')">💬 Symbolic Interactionism</button>
+    <button class="theory-choice" onclick="showDetective('case5-functional')">🏛️ Structural Functionalism</button>
+    <button class="theory-choice" onclick="showDetective('case5-conflict')">⚖️ Conflict Theory</button>
+
+    <div id="case5-symbolic" class="answer-box correct-answer">
+      <h3>✅ Correct: Symbolic Interactionism</h3>
+      <p>
+        Symbolic Interactionism examines meaning. This scenario focuses on how people define family differently based on relationships, interaction, and shared meaning.
+      </p>
+    </div>
+
+    <div id="case5-functional" class="answer-box incorrect-answer">
+      <h3>Not the best answer.</h3>
+      <p>
+        Structural Functionalism could examine what families do for society, but this scenario focuses more on the meaning of family.
+      </p>
+    </div>
+
+    <div id="case5-conflict" class="answer-box incorrect-answer">
+      <h3>Not the best answer.</h3>
+      <p>
+        Conflict Theory might ask whose definition of family is recognized by law or society, but the main focus here is meaning-making.
+      </p>
+    </div>
+  </div>
+
+  <div class="detective-tip">
+    <h2 style="margin-top:0; color:#6a4b96;">🧠 Detective Tip</h2>
+    <p>
+      The goal is not just to memorize theory names. The goal is to ask: <strong>Which theory gives me the best lens for understanding this family situation?</strong>
+    </p>
+  </div>
+
+  <script>
+    function showDetective(answerId) {
+      var selected = document.getElementById(answerId);
+      var card = selected.closest('.detective-card');
+      var answers = card.querySelectorAll('.answer-box');
+
+      answers.forEach(function(answer) {
+        answer.style.display = 'none';
+      });
+
+      selected.style.display = 'block';
+      selected.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  </script>
+
+</section>
     <div class="footer">
       <h2>🌳 Final Thought</h2>
       <p>Family theories help us see that personal experiences are connected to larger patterns: development, systems, culture, institutions, inequality, interaction, and social change.</p>
