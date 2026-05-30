@@ -99,7 +99,257 @@
       <div class="familyexample"><strong>Family Example:</strong> A teenager negotiating identity may rely on family support, peer groups, school culture, and media messages to understand who they are becoming.</div>
       <div class="prompt"><strong>Family Book Prompt:</strong> Which stage of life has been most important in shaping your family roles, relationships, or expectations?</div>
     </section>
+<section id="erikson" style="font-family: Arial, Helvetica, sans-serif; max-width:1200px; margin:40px auto; color:#24323f; line-height:1.6;">
 
+  <div style="background:linear-gradient(135deg,#f7f2ff,#eef6ff,#fff8e8); border:2px solid #8a6db0; border-radius:28px; padding:30px; text-align:center; margin-bottom:28px;">
+    <h1 style="margin-top:0; color:#173b57;">🧠 Erik Erikson’s 8 Stages of Psychosocial Development</h1>
+    <p style="font-size:18px; max-width:850px; margin:auto;">
+      Erikson’s theory explains development as a lifelong process. At each stage, people face a social and emotional challenge that can shape identity, relationships, confidence, and family life.
+    </p>
+  </div>
+
+  <style>
+    .erikson-grid {
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+      gap:18px;
+      margin-bottom:26px;
+    }
+
+    .stage-button {
+      background:#ffffff;
+      border:2px solid #d9cbed;
+      border-radius:20px;
+      padding:20px;
+      text-align:center;
+      cursor:pointer;
+      box-shadow:0 6px 14px rgba(0,0,0,.08);
+      transition:transform .2s ease, box-shadow .2s ease;
+    }
+
+    .stage-button:hover {
+      transform:translateY(-4px);
+      box-shadow:0 10px 20px rgba(0,0,0,.14);
+    }
+
+    .stage-icon {
+      font-size:42px;
+      margin-bottom:8px;
+    }
+
+    .stage-title {
+      color:#173b57;
+      font-weight:bold;
+      font-size:18px;
+      margin-bottom:6px;
+    }
+
+    .stage-age {
+      color:#6a4b96;
+      font-size:14px;
+      font-weight:bold;
+    }
+
+    .stage-info {
+      background:#ffffff;
+      border:1px solid #d7e3f2;
+      border-radius:24px;
+      padding:26px;
+      box-shadow:0 8px 18px rgba(0,0,0,.08);
+      margin-bottom:26px;
+    }
+
+    .stage-info h2 {
+      margin-top:0;
+      color:#173b57;
+    }
+
+    .erikson-box {
+      border-radius:16px;
+      padding:16px;
+      margin-top:14px;
+    }
+
+    .question-box {
+      background:#eef6ff;
+      border-left:8px solid #5a8ec2;
+    }
+
+    .success-box {
+      background:#eef7f1;
+      border-left:8px solid #5b9b5b;
+    }
+
+    .struggle-box {
+      background:#fff8e8;
+      border-left:8px solid #d49b2c;
+    }
+
+    .family-box {
+      background:#f7f2ff;
+      border-left:8px solid #8a6db0;
+    }
+
+    .path-line {
+      text-align:center;
+      font-size:28px;
+      margin:10px 0 24px;
+      color:#8a6db0;
+    }
+  </style>
+
+  <div class="stage-info" id="stageInfo">
+    <h2>👈 Click a Life Stage</h2>
+    <p>
+      Select one of Erikson’s stages below to learn the central conflict, the major question of that stage, and how it connects to family life.
+    </p>
+    <div class="erikson-box family-box">
+      <strong>Family Book Connection:</strong> Erikson’s theory can help you analyze how childhood, adolescence, adulthood, relationships, parenting, aging, and life transitions shape family experiences.
+    </div>
+  </div>
+
+  <div class="erikson-grid">
+
+    <div class="stage-button" onclick="showStage('trust')">
+      <div class="stage-icon">👶</div>
+      <div class="stage-title">Trust vs. Mistrust</div>
+      <div class="stage-age">Infancy</div>
+    </div>
+
+    <div class="stage-button" onclick="showStage('autonomy')">
+      <div class="stage-icon">🚶</div>
+      <div class="stage-title">Autonomy vs. Shame</div>
+      <div class="stage-age">Toddlerhood</div>
+    </div>
+
+    <div class="stage-button" onclick="showStage('initiative')">
+      <div class="stage-icon">🎨</div>
+      <div class="stage-title">Initiative vs. Guilt</div>
+      <div class="stage-age">Early Childhood</div>
+    </div>
+
+    <div class="stage-button" onclick="showStage('industry')">
+      <div class="stage-icon">🎒</div>
+      <div class="stage-title">Industry vs. Inferiority</div>
+      <div class="stage-age">School Age</div>
+    </div>
+
+    <div class="stage-button" onclick="showStage('identity')">
+      <div class="stage-icon">🧑</div>
+      <div class="stage-title">Identity vs. Role Confusion</div>
+      <div class="stage-age">Adolescence</div>
+    </div>
+
+    <div class="stage-button" onclick="showStage('intimacy')">
+      <div class="stage-icon">❤️</div>
+      <div class="stage-title">Intimacy vs. Isolation</div>
+      <div class="stage-age">Young Adulthood</div>
+    </div>
+
+    <div class="stage-button" onclick="showStage('generativity')">
+      <div class="stage-icon">🌱</div>
+      <div class="stage-title">Generativity vs. Stagnation</div>
+      <div class="stage-age">Middle Adulthood</div>
+    </div>
+
+    <div class="stage-button" onclick="showStage('integrity')">
+      <div class="stage-icon">🕰️</div>
+      <div class="stage-title">Integrity vs. Despair</div>
+      <div class="stage-age">Later Life</div>
+    </div>
+
+  </div>
+
+  <script>
+    const stageContent = {
+      trust: `
+        <h2>👶 Trust vs. Mistrust</h2>
+        <p><strong>Life Stage:</strong> Infancy</p>
+        <div class="erikson-box question-box"><strong>Big Question:</strong> Can I trust the people who care for me?</div>
+        <div class="erikson-box success-box"><strong>Positive Outcome:</strong> A child develops trust when caregivers are consistent, nurturing, and responsive.</div>
+        <div class="erikson-box struggle-box"><strong>Possible Struggle:</strong> Inconsistent care may lead to insecurity, fear, or mistrust.</div>
+        <div class="erikson-box family-box"><strong>Family Example:</strong> A baby whose needs are met regularly may begin to feel safe in the world. A baby whose care is unpredictable may become anxious or harder to soothe.</div>
+        <div class="erikson-box family-box"><strong>Family Book Prompt:</strong> What stories does your family tell about you as a baby? Who provided care, comfort, and security?</div>
+      `,
+      autonomy: `
+        <h2>🚶 Autonomy vs. Shame and Doubt</h2>
+        <p><strong>Life Stage:</strong> Toddlerhood</p>
+        <div class="erikson-box question-box"><strong>Big Question:</strong> Can I do things by myself?</div>
+        <div class="erikson-box success-box"><strong>Positive Outcome:</strong> Children develop independence when families allow safe choices and encourage effort.</div>
+        <div class="erikson-box struggle-box"><strong>Possible Struggle:</strong> Harsh criticism or overcontrol may create shame, doubt, or fear of trying.</div>
+        <div class="erikson-box family-box"><strong>Family Example:</strong> A toddler learning to dress, feed themselves, or choose a toy is practicing independence.</div>
+        <div class="erikson-box family-box"><strong>Family Book Prompt:</strong> How did your family encourage independence or responsibility when you were young?</div>
+      `,
+      initiative: `
+        <h2>🎨 Initiative vs. Guilt</h2>
+        <p><strong>Life Stage:</strong> Early Childhood</p>
+        <div class="erikson-box question-box"><strong>Big Question:</strong> Is it okay for me to explore, imagine, and take action?</div>
+        <div class="erikson-box success-box"><strong>Positive Outcome:</strong> Children develop initiative when families support curiosity, creativity, and problem-solving.</div>
+        <div class="erikson-box struggle-box"><strong>Possible Struggle:</strong> Children may feel guilt if they are punished for curiosity or made to feel their ideas are wrong.</div>
+        <div class="erikson-box family-box"><strong>Family Example:</strong> A child pretending to cook, building with blocks, or asking many questions is practicing initiative.</div>
+        <div class="erikson-box family-box"><strong>Family Book Prompt:</strong> What kinds of play, creativity, or responsibility were encouraged in your family?</div>
+      `,
+      industry: `
+        <h2>🎒 Industry vs. Inferiority</h2>
+        <p><strong>Life Stage:</strong> School Age</p>
+        <div class="erikson-box question-box"><strong>Big Question:</strong> Can I succeed and be capable?</div>
+        <div class="erikson-box success-box"><strong>Positive Outcome:</strong> Children develop confidence when they learn skills and receive encouragement.</div>
+        <div class="erikson-box struggle-box"><strong>Possible Struggle:</strong> Repeated failure, criticism, or comparison may lead to feelings of inferiority.</div>
+        <div class="erikson-box family-box"><strong>Family Example:</strong> A child who receives support with school, chores, sports, or hobbies may develop a sense of competence.</div>
+        <div class="erikson-box family-box"><strong>Family Book Prompt:</strong> What skills or talents were valued in your family? How did adults respond to success or failure?</div>
+      `,
+      identity: `
+        <h2>🧑 Identity vs. Role Confusion</h2>
+        <p><strong>Life Stage:</strong> Adolescence</p>
+        <div class="erikson-box question-box"><strong>Big Question:</strong> Who am I?</div>
+        <div class="erikson-box success-box"><strong>Positive Outcome:</strong> Teens begin forming a stronger sense of identity, values, beliefs, and direction.</div>
+        <div class="erikson-box struggle-box"><strong>Possible Struggle:</strong> Role confusion can occur when teens feel uncertain about who they are or where they belong.</div>
+        <div class="erikson-box family-box"><strong>Family Example:</strong> A teenager experimenting with music, clothing, friend groups, sports, religion, or career interests is exploring identity.</div>
+        <div class="erikson-box family-box"><strong>Family Book Prompt:</strong> How did your family influence your identity during adolescence?</div>
+      `,
+      intimacy: `
+        <h2>❤️ Intimacy vs. Isolation</h2>
+        <p><strong>Life Stage:</strong> Young Adulthood</p>
+        <div class="erikson-box question-box"><strong>Big Question:</strong> Can I form close and meaningful relationships?</div>
+        <div class="erikson-box success-box"><strong>Positive Outcome:</strong> People develop intimacy when they can build trust, commitment, and emotional closeness.</div>
+        <div class="erikson-box struggle-box"><strong>Possible Struggle:</strong> Isolation may occur when someone avoids closeness or struggles to maintain relationships.</div>
+        <div class="erikson-box family-box"><strong>Family Example:</strong> Dating, friendships, marriage, cohabitation, and close chosen family relationships can all connect to this stage.</div>
+        <div class="erikson-box family-box"><strong>Family Book Prompt:</strong> What did your family teach you about love, trust, and relationships?</div>
+      `,
+      generativity: `
+        <h2>🌱 Generativity vs. Stagnation</h2>
+        <p><strong>Life Stage:</strong> Middle Adulthood</p>
+        <div class="erikson-box question-box"><strong>Big Question:</strong> How can I contribute to others and the future?</div>
+        <div class="erikson-box success-box"><strong>Positive Outcome:</strong> Generativity develops through parenting, mentoring, caregiving, work, volunteering, or supporting the next generation.</div>
+        <div class="erikson-box struggle-box"><strong>Possible Struggle:</strong> Stagnation may occur when people feel disconnected, unproductive, or unable to contribute.</div>
+        <div class="erikson-box family-box"><strong>Family Example:</strong> A parent supporting children, a teacher mentoring students, or an adult caring for aging parents may experience generativity.</div>
+        <div class="erikson-box family-box"><strong>Family Book Prompt:</strong> Who in your family contributed to future generations? How did they do it?</div>
+      `,
+      integrity: `
+        <h2>🕰️ Integrity vs. Despair</h2>
+        <p><strong>Life Stage:</strong> Later Life</p>
+        <div class="erikson-box question-box"><strong>Big Question:</strong> Can I look back on my life with meaning and acceptance?</div>
+        <div class="erikson-box success-box"><strong>Positive Outcome:</strong> Integrity develops when older adults find meaning, wisdom, and acceptance in their life story.</div>
+        <div class="erikson-box struggle-box"><strong>Possible Struggle:</strong> Despair may occur when people feel regret, loss, or dissatisfaction with life choices.</div>
+        <div class="erikson-box family-box"><strong>Family Example:</strong> Grandparents sharing family stories can help younger generations understand identity, resilience, and family history.</div>
+        <div class="erikson-box family-box"><strong>Family Book Prompt:</strong> What stories from older family members shaped your understanding of your family?</div>
+      `
+    };
+
+    function showStage(stage) {
+      document.getElementById("stageInfo").innerHTML = stageContent[stage];
+      document.getElementById("stageInfo").scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+  </script>
+
+  <div style="background:#173b57; color:white; border-radius:22px; padding:24px; margin-top:30px; text-align:center;">
+    <h2 style="margin-top:0;">🧠 Quick Takeaway</h2>
+    <p style="margin-bottom:0;">
+      Erikson helps us see development as a lifelong process shaped by family relationships, social expectations, identity, love, work, caregiving, aging, and reflection.
+    </p>
+  </div>
+
+</section>
     <section class="section theory" id="bronfenbrenner">
       <h2>🌍 Urie Bronfenbrenner: Ecological Systems Theory</h2>
       <div class="grid"><div class="card green"><div class="icon">🎯</div><h3>Big Idea</h3><p>Human development is shaped by nested systems: family, school, peers, workplaces, community, culture, laws, and historical time.</p></div><div class="card"><div class="icon">🧅</div><h3>Visual Model</h3><p>Think of a person surrounded by circles. The closest circle is family. Wider circles include school, work, community, culture, and social change.</p></div></div>
