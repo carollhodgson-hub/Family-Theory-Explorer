@@ -555,7 +555,256 @@
       <div class="familyexample"><strong>Family Example:</strong> If one parent loses a job, responsibilities, emotions, routines, and conflict patterns may shift for everyone.</div>
       <div class="prompt"><strong>Family Book Prompt:</strong> What roles or patterns have repeated across your family system?</div>
     </section>
+<section id="family-systems" style="font-family: Arial, Helvetica, sans-serif; max-width:1200px; margin:40px auto; color:#24323f;">
 
+<div style="background:linear-gradient(135deg,#eef7f1,#eef6ff,#fff8e8); border:2px solid #6e9c73; border-radius:28px; padding:30px; text-align:center; margin-bottom:28px;">
+    <h1 style="margin-top:0; color:#173b57;">🏠 Family Systems Simulator</h1>
+
+    <p style="font-size:18px; max-width:850px; margin:auto;">
+        Family Systems Theory views the family as an interconnected system.
+        When one part of the family changes, everyone else is affected.
+        Choose a life event below and watch how the system responds.
+    </p>
+</div>
+
+<style>
+
+.family-diagram{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:20px;
+    margin-bottom:25px;
+}
+
+.member-card{
+    background:white;
+    border-radius:20px;
+    padding:20px;
+    text-align:center;
+    box-shadow:0 6px 16px rgba(0,0,0,.08);
+    border:1px solid #d7e3f2;
+}
+
+.member-icon{
+    font-size:50px;
+}
+
+.member-title{
+    font-weight:bold;
+    color:#173b57;
+    margin-top:8px;
+}
+
+.member-effect{
+    margin-top:10px;
+    min-height:60px;
+    font-size:14px;
+}
+
+.scenario-buttons{
+    text-align:center;
+    margin:30px 0;
+}
+
+.scenario-btn{
+    background:#173b57;
+    color:white;
+    border:none;
+    border-radius:16px;
+    padding:12px 18px;
+    margin:6px;
+    cursor:pointer;
+    font-size:15px;
+}
+
+.scenario-btn:hover{
+    background:#2a567d;
+}
+
+.theory-box{
+    background:#eef7f1;
+    border-left:8px solid #5b9b5b;
+    border-radius:16px;
+    padding:18px;
+    margin-top:25px;
+}
+
+</style>
+
+<div class="scenario-buttons">
+
+<h2 style="color:#173b57;">🎲 Choose a Family Event</h2>
+
+<button class="scenario-btn" onclick="loadScenario('job')">💼 Job Loss</button>
+
+<button class="scenario-btn" onclick="loadScenario('college')">🎓 Child Goes to College</button>
+
+<button class="scenario-btn" onclick="loadScenario('baby')">👶 New Baby</button>
+
+<button class="scenario-btn" onclick="loadScenario('illness')">🏥 Serious Illness</button>
+
+<button class="scenario-btn" onclick="loadScenario('retirement')">🌴 Retirement</button>
+
+</div>
+
+<div class="family-diagram">
+
+<div class="member-card">
+<div class="member-icon">👩</div>
+<div class="member-title">Mom</div>
+<div class="member-effect" id="momEffect">
+Choose a scenario.
+</div>
+</div>
+
+<div class="member-card">
+<div class="member-icon">👨</div>
+<div class="member-title">Dad</div>
+<div class="member-effect" id="dadEffect">
+Choose a scenario.
+</div>
+</div>
+
+<div class="member-card">
+<div class="member-icon">👧</div>
+<div class="member-title">Child</div>
+<div class="member-effect" id="childEffect">
+Choose a scenario.
+</div>
+</div>
+
+<div class="member-card">
+<div class="member-icon">👵</div>
+<div class="member-title">Grandparent</div>
+<div class="member-effect" id="grandEffect">
+Choose a scenario.
+</div>
+</div>
+
+</div>
+
+<div class="theory-box" id="theoryExplanation">
+
+<strong>🏠 Family Systems Theory:</strong>
+
+Click a family event above to see how one change can affect the entire family system.
+
+</div>
+
+<script>
+
+function loadScenario(type){
+
+if(type==="job"){
+
+document.getElementById("momEffect").innerHTML =
+"💰 May work more hours or take on additional responsibilities.";
+
+document.getElementById("dadEffect").innerHTML =
+"😟 Experiences financial stress and role changes.";
+
+document.getElementById("childEffect").innerHTML =
+"😞 Notices family stress and changes in routines.";
+
+document.getElementById("grandEffect").innerHTML =
+"🤝 May provide childcare or financial assistance.";
+
+document.getElementById("theoryExplanation").innerHTML =
+"<strong>🏠 Family Systems Theory:</strong> Dad's job loss affects every member of the family, even though only one person lost employment.";
+
+}
+
+if(type==="college"){
+
+document.getElementById("momEffect").innerHTML =
+"😭 Experiences empty nest feelings.";
+
+document.getElementById("dadEffect").innerHTML =
+"💰 Adjusts to tuition and financial changes.";
+
+document.getElementById("childEffect").innerHTML =
+"🎓 Gains independence and new responsibilities.";
+
+document.getElementById("grandEffect").innerHTML =
+"📞 May communicate more often with family.";
+
+document.getElementById("theoryExplanation").innerHTML =
+"<strong>🏠 Family Systems Theory:</strong> A child leaving home changes family roles, routines, and relationships.";
+
+}
+
+if(type==="baby"){
+
+document.getElementById("momEffect").innerHTML =
+"👶 Increased caregiving responsibilities.";
+
+document.getElementById("dadEffect").innerHTML =
+"🍼 Adjusts work and family routines.";
+
+document.getElementById("childEffect").innerHTML =
+"😮 Learns to share attention and resources.";
+
+document.getElementById("grandEffect").innerHTML =
+"❤️ May become more involved in family life.";
+
+document.getElementById("theoryExplanation").innerHTML =
+"<strong>🏠 Family Systems Theory:</strong> Adding one new family member changes the behavior and responsibilities of everyone.";
+
+}
+
+if(type==="illness"){
+
+document.getElementById("momEffect").innerHTML =
+"🏥 May become caregiver.";
+
+document.getElementById("dadEffect").innerHTML =
+"😟 Increased emotional and financial stress.";
+
+document.getElementById("childEffect").innerHTML =
+"😢 Adapts to changes in routines and attention.";
+
+document.getElementById("grandEffect").innerHTML =
+"🤝 Provides support when possible.";
+
+document.getElementById("theoryExplanation").innerHTML =
+"<strong>🏠 Family Systems Theory:</strong> Illness rarely affects only one person. The entire family adjusts.";
+
+}
+
+if(type==="retirement"){
+
+document.getElementById("momEffect").innerHTML =
+"🌴 More time spent together.";
+
+document.getElementById("dadEffect").innerHTML =
+"⏰ Adjusts to a new daily routine.";
+
+document.getElementById("childEffect").innerHTML =
+"📞 May receive more contact and support.";
+
+document.getElementById("grandEffect").innerHTML =
+"😊 Enjoys new family opportunities.";
+
+document.getElementById("theoryExplanation").innerHTML =
+"<strong>🏠 Family Systems Theory:</strong> Retirement changes family schedules, finances, relationships, and responsibilities.";
+
+}
+
+}
+
+</script>
+
+<div style="background:#173b57; color:white; border-radius:20px; padding:22px; margin-top:30px; text-align:center;">
+
+<h2 style="margin-top:0;">💡 Family Systems Takeaway</h2>
+
+<p style="margin-bottom:0;">
+The family is more than a collection of individuals. Family Systems Theory argues that family members are interconnected. When one person changes, the entire family system responds.
+</p>
+
+</div>
+
+</section>
     <section class="section theory" id="development">
       <h2>🕰️ Family Development Theory</h2>
       <p>Family development theory focuses on how families move through stages and transitions over time. Families change as people enter, leave, grow older, marry, divorce, parent, retire, or take on caregiving roles.</p>
