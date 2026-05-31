@@ -905,7 +905,371 @@ The family is more than a collection of individuals. Family Systems Theory argue
       <div class="choice-scene"><div class="scene-card"><h4>Restaurant Conflict</h4><div class="visual-strip">🥗 ↔ 🍕 = 😌</div><p>Alternating choices lowers conflict and preserves the reward of enjoying time together.</p></div><div class="scene-card"><h4>Beach Weekend vs. Apartment</h4><div class="visual-strip">🏖️ vs. 🏠💸</div><p>Short-term fun may carry long-term costs when money is needed for housing and independence.</p></div></div>
       <div class="prompt"><strong>Family Book Prompt:</strong> How do rewards, costs, fairness, or expectations appear in a family relationship you are analyzing?</div>
     </section>
+<section id="theory-house" style="font-family: Arial, Helvetica, sans-serif; max-width:1200px; margin:40px auto; color:#24323f; line-height:1.6;">
 
+  <div style="background:linear-gradient(135deg,#fff8e8,#eef7f1,#eef6ff); border:2px solid #7c8fb5; border-radius:28px; padding:30px; text-align:center; margin-bottom:28px;">
+    <h1 style="margin-top:0; color:#173b57;">🏡 Family Theory House</h1>
+    <p style="font-size:18px; max-width:850px; margin:auto;">
+      Click a room in the house to see how different family theories would analyze the same everyday space.
+      This helps you understand that theories are different lenses for looking at family life.
+    </p>
+  </div>
+
+  <style>
+    .house-wrap {
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:28px;
+      align-items:start;
+    }
+
+    .house-grid {
+      background:#fff;
+      border:2px solid #d7e3f2;
+      border-radius:28px;
+      padding:24px;
+      box-shadow:0 8px 18px rgba(0,0,0,.08);
+      position:relative;
+    }
+
+    .roof {
+      background:#173b57;
+      color:white;
+      padding:18px;
+      border-radius:22px 22px 8px 8px;
+      text-align:center;
+      font-weight:bold;
+      font-size:22px;
+      margin-bottom:14px;
+    }
+
+    .rooms {
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:14px;
+    }
+
+    .room-btn {
+      border:none;
+      border-radius:20px;
+      padding:24px 14px;
+      min-height:135px;
+      cursor:pointer;
+      font-family:Arial, Helvetica, sans-serif;
+      font-size:17px;
+      font-weight:bold;
+      color:#173b57;
+      box-shadow:0 5px 14px rgba(0,0,0,.08);
+      transition:transform .2s ease, box-shadow .2s ease;
+    }
+
+    .room-btn:hover {
+      transform:translateY(-4px);
+      box-shadow:0 10px 20px rgba(0,0,0,.14);
+    }
+
+    .room-icon {
+      display:block;
+      font-size:42px;
+      margin-bottom:8px;
+    }
+
+    .kitchen { background:#fff8e8; border:2px solid #d49b2c; }
+    .living { background:#eef6ff; border:2px solid #5a8ec2; }
+    .bedroom { background:#f7f2ff; border:2px solid #8a6db0; }
+    .yard { background:#eef7f1; border:2px solid #5b9b5b; }
+    .office { background:#fff1f5; border:2px solid #c9869f; }
+    .doorway { background:#f8fbff; border:2px solid #7c8fb5; }
+
+    .house-info {
+      background:#ffffff;
+      border:1px solid #d7e3f2;
+      border-radius:24px;
+      padding:24px;
+      box-shadow:0 8px 18px rgba(0,0,0,.08);
+      min-height:520px;
+    }
+
+    .house-info h2 {
+      margin-top:0;
+      color:#173b57;
+    }
+
+    .lens-box {
+      border-radius:16px;
+      padding:16px;
+      margin:14px 0;
+    }
+
+    .lens-functional { background:#eef7f1; border-left:8px solid #5b9b5b; }
+    .lens-conflict { background:#fff8e8; border-left:8px solid #d49b2c; }
+    .lens-feminist { background:#fff1f5; border-left:8px solid #c9869f; }
+    .lens-symbolic { background:#eef6ff; border-left:8px solid #5a8ec2; }
+    .lens-exchange { background:#f7f2ff; border-left:8px solid #8a6db0; }
+
+    @media (max-width:850px) {
+      .house-wrap {
+        grid-template-columns:1fr;
+      }
+
+      .rooms {
+        grid-template-columns:1fr;
+      }
+    }
+  </style>
+
+  <div class="house-wrap">
+
+    <div class="house-grid">
+      <div class="roof">🏡 Click a Room</div>
+
+      <div class="rooms">
+        <button class="room-btn kitchen" onclick="showRoom('kitchen')">
+          <span class="room-icon">🍽️</span>
+          Kitchen
+        </button>
+
+        <button class="room-btn living" onclick="showRoom('living')">
+          <span class="room-icon">🛋️</span>
+          Living Room
+        </button>
+
+        <button class="room-btn bedroom" onclick="showRoom('bedroom')">
+          <span class="room-icon">🛏️</span>
+          Bedroom
+        </button>
+
+        <button class="room-btn yard" onclick="showRoom('yard')">
+          <span class="room-icon">🌳</span>
+          Yard / Neighborhood
+        </button>
+
+        <button class="room-btn office" onclick="showRoom('office')">
+          <span class="room-icon">💻</span>
+          Work / Study Space
+        </button>
+
+        <button class="room-btn doorway" onclick="showRoom('doorway')">
+          <span class="room-icon">🚪</span>
+          Front Door
+        </button>
+      </div>
+    </div>
+
+    <div class="house-info" id="houseInfo">
+      <h2>👈 Choose a Room</h2>
+      <p>
+        Each room in a family home can be studied through different sociological theories.
+      </p>
+      <p>
+        Click a room to see how functionalist, conflict, feminist, symbolic interactionist,
+        and social exchange theories notice different parts of family life.
+      </p>
+      <div class="lens-box lens-symbolic">
+        <strong>Family Book Connection:</strong>
+        Think about a space connected to your family. What happened there? Who used the space? What meanings, roles, conflicts, or routines were connected to it?
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    const roomContent = {
+      kitchen: `
+        <h2>🍽️ Kitchen</h2>
+        <p>The kitchen is often where families cook, eat, talk, argue, plan, and pass down traditions.</p>
+
+        <div class="lens-box lens-functional">
+          <strong>🏛️ Functionalist Lens:</strong>
+          The kitchen helps the family function by supporting caregiving, nutrition, socialization, routines, and family bonding.
+        </div>
+
+        <div class="lens-box lens-conflict">
+          <strong>⚖️ Conflict Lens:</strong>
+          The kitchen can reveal inequality. Who buys groceries? Who cooks? Who cleans? Who has enough food? Who does unpaid labor?
+        </div>
+
+        <div class="lens-box lens-feminist">
+          <strong>🌸 Feminist Lens:</strong>
+          The kitchen may show gender expectations if women or girls are expected to cook and clean more than men or boys.
+        </div>
+
+        <div class="lens-box lens-symbolic">
+          <strong>💬 Symbolic Interactionist Lens:</strong>
+          Family recipes, holiday meals, assigned seats, and dinner table conversations create shared meanings and family identity.
+        </div>
+
+        <div class="lens-box lens-exchange">
+          <strong>🤝 Social Exchange Lens:</strong>
+          Family members may weigh rewards and costs: cooking for others may bring appreciation, but it may also take time and energy.
+        </div>
+      `,
+
+      living: `
+        <h2>🛋️ Living Room</h2>
+        <p>The living room is often where families relax, watch media, host visitors, and spend time together.</p>
+
+        <div class="lens-box lens-functional">
+          <strong>🏛️ Functionalist Lens:</strong>
+          The living room supports family bonding, relaxation, communication, and shared leisure.
+        </div>
+
+        <div class="lens-box lens-conflict">
+          <strong>⚖️ Conflict Lens:</strong>
+          Conflict may appear over who controls the TV, who gets quiet space, whose interests matter, or whether everyone has equal comfort.
+        </div>
+
+        <div class="lens-box lens-feminist">
+          <strong>🌸 Feminist Lens:</strong>
+          Media watched in the living room may reinforce or challenge gender roles, relationship expectations, and family ideals.
+        </div>
+
+        <div class="lens-box lens-symbolic">
+          <strong>💬 Symbolic Interactionist Lens:</strong>
+          Family movie nights, inside jokes, arguments, and traditions create meanings attached to togetherness.
+        </div>
+
+        <div class="lens-box lens-exchange">
+          <strong>🤝 Social Exchange Lens:</strong>
+          Family members may compromise on activities because the reward of spending time together is greater than the cost of not always choosing the activity.
+        </div>
+      `,
+
+      bedroom: `
+        <h2>🛏️ Bedroom</h2>
+        <p>Bedrooms can represent privacy, identity, rest, independence, conflict, and personal boundaries.</p>
+
+        <div class="lens-box lens-functional">
+          <strong>🏛️ Functionalist Lens:</strong>
+          Bedrooms help families function by allowing rest, privacy, and personal space.
+        </div>
+
+        <div class="lens-box lens-conflict">
+          <strong>⚖️ Conflict Lens:</strong>
+          Bedroom space may reveal inequality if some family members have privacy and others do not because of housing costs or overcrowding.
+        </div>
+
+        <div class="lens-box lens-feminist">
+          <strong>🌸 Feminist Lens:</strong>
+          Rules about bedrooms, privacy, clothing, and dating may differ by gender and reflect unequal expectations.
+        </div>
+
+        <div class="lens-box lens-symbolic">
+          <strong>💬 Symbolic Interactionist Lens:</strong>
+          Posters, decorations, photos, and objects in bedrooms help express identity and meaning.
+        </div>
+
+        <div class="lens-box lens-exchange">
+          <strong>🤝 Social Exchange Lens:</strong>
+          Sharing a bedroom may involve negotiating rewards and costs, such as companionship versus loss of privacy.
+        </div>
+      `,
+
+      yard: `
+        <h2>🌳 Yard / Neighborhood</h2>
+        <p>The yard and neighborhood connect family life to community, safety, environment, and social class.</p>
+
+        <div class="lens-box lens-functional">
+          <strong>🏛️ Functionalist Lens:</strong>
+          Neighborhoods can provide social support, recreation, safety, and connection to schools and community institutions.
+        </div>
+
+        <div class="lens-box lens-conflict">
+          <strong>⚖️ Conflict Lens:</strong>
+          Neighborhood differences reveal inequality in housing, schools, safety, parks, transportation, and environmental quality.
+        </div>
+
+        <div class="lens-box lens-feminist">
+          <strong>🌸 Feminist Lens:</strong>
+          Safety concerns may shape how girls, women, LGBTQ+ people, children, and caregivers experience public space differently.
+        </div>
+
+        <div class="lens-box lens-symbolic">
+          <strong>💬 Symbolic Interactionist Lens:</strong>
+          A neighborhood can become part of family identity through memories, stories, neighbors, and community rituals.
+        </div>
+
+        <div class="lens-box lens-exchange">
+          <strong>🤝 Social Exchange Lens:</strong>
+          Families may weigh costs and rewards when deciding where to live, balancing price, safety, school quality, and commute time.
+        </div>
+      `,
+
+      office: `
+        <h2>💻 Work / Study Space</h2>
+        <p>A work or study space connects family life to education, employment, technology, income, and opportunity.</p>
+
+        <div class="lens-box lens-functional">
+          <strong>🏛️ Functionalist Lens:</strong>
+          Work and study spaces help family members prepare for school, careers, and future responsibilities.
+        </div>
+
+        <div class="lens-box lens-conflict">
+          <strong>⚖️ Conflict Lens:</strong>
+          Not all families have quiet study space, reliable internet, computers, or flexible work schedules.
+        </div>
+
+        <div class="lens-box lens-feminist">
+          <strong>🌸 Feminist Lens:</strong>
+          Women and caregivers may struggle to separate paid work, schoolwork, childcare, and household labor when all occur in the same space.
+        </div>
+
+        <div class="lens-box lens-symbolic">
+          <strong>💬 Symbolic Interactionist Lens:</strong>
+          A desk, laptop, diploma, or workspace may symbolize ambition, responsibility, stress, or independence.
+        </div>
+
+        <div class="lens-box lens-exchange">
+          <strong>🤝 Social Exchange Lens:</strong>
+          Working or studying may involve sacrificing time with family now for future rewards such as income, stability, or career goals.
+        </div>
+      `,
+
+      doorway: `
+        <h2>🚪 Front Door</h2>
+        <p>The front door represents boundaries between family and the outside world.</p>
+
+        <div class="lens-box lens-functional">
+          <strong>🏛️ Functionalist Lens:</strong>
+          The front door helps organize family privacy, safety, hospitality, and connection to the community.
+        </div>
+
+        <div class="lens-box lens-conflict">
+          <strong>⚖️ Conflict Lens:</strong>
+          A front door can symbolize access or exclusion. Who feels welcome? Who has housing security? Who is kept out?
+        </div>
+
+        <div class="lens-box lens-feminist">
+          <strong>🌸 Feminist Lens:</strong>
+          Family rules about who can visit, dating, safety, and reputation may be shaped by gender expectations.
+        </div>
+
+        <div class="lens-box lens-symbolic">
+          <strong>💬 Symbolic Interactionist Lens:</strong>
+          Coming home, leaving home, knocking, locking the door, or welcoming guests all carry symbolic meaning.
+        </div>
+
+        <div class="lens-box lens-exchange">
+          <strong>🤝 Social Exchange Lens:</strong>
+          Families may negotiate openness and privacy by weighing the rewards of connection against the costs of risk, stress, or conflict.
+        </div>
+      `
+    };
+
+    function showRoom(room) {
+      document.getElementById("houseInfo").innerHTML = roomContent[room];
+      document.getElementById("houseInfo").scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+  </script>
+
+  <div style="background:#173b57; color:white; border-radius:22px; padding:24px; margin-top:30px; text-align:center;">
+    <h2 style="margin-top:0;">🏡 Family Theory House Takeaway</h2>
+    <p style="margin-bottom:0;">
+      The same family space can be studied in many ways. Theories help us notice different patterns, meanings, inequalities, roles, and decisions inside everyday family life.
+    </p>
+  </div>
+
+</section>
     <section class="section" id="apply">
       <h2>🧩 Applying Theories to the Family Book Project</h2>
       <p>For stronger sociology writing, do not just name a theory. Use the theory to explain something.</p>
